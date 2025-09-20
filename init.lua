@@ -59,9 +59,6 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
 
-  -- none-ls for formatters (clang-format)
-  -- { "nvimtools/none-ls.nvim" },
-
   -- Git
   { "lewis6991/gitsigns.nvim" },
 
@@ -200,29 +197,6 @@ if has_cmp then
     },
   })
 end
-
--- =====================================================================
--- Null-ls for formatting (clang-format)
--- =====================================================================
--- local has_null, null_ls = pcall(require, "null-ls")
--- if has_null then
---   local formatting = null_ls.builtins.formatting
-
---   null_ls.setup({
---     sources = {
---       formatting.clang_format,
---     },
---     on_attach = function(client, bufnr)
---       if client.supports_method("textDocument/formatting") then
---         vim.api.nvim_clear_autocmds({ group = 0, buffer = bufnr })
---         vim.api.nvim_create_autocmd("BufWritePre", {
---           buffer = bufnr,
---           callback = function() vim.lsp.buf.format({ bufnr = bufnr }) end,
---         })
---       end
---     end,
---   })
--- end
 
 -- =====================================================================
 -- Git signs, autopairs, comment, lualine
